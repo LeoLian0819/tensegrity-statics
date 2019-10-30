@@ -1,8 +1,8 @@
 %Static force analysis for a regular non-minimal tensegrity prism.
 %By Yuhao Lian, UC San Diego
-clear;
+clear; figure(1);
 %Number of bars
-alpha=pi/3; 
+alpha=pi/6; 
 %twist angle of the prism 
 %if the tensegrity prism is non-minimal, alpha then has a interval of [pi/2-pi/prism_p,pi/2]
 %if the it's minimal, alpha has a fixed value of pi/2-pi/prism_p
@@ -40,7 +40,9 @@ C(b+11,3)=1; C(b+11,7)=-1;
 C(b+12,4)=1; C(b+12,8)=-1;
 s=12;
 m=b+s;
-U(1:dim,1:8)=0;
+U(1:dim,1:8)=0; 
+U(3,1)=1; U(3,2)=1; U(3,3)=1; U(3,4)=1;
+U(3,5)=-1; U(3,6)=-1; U(3,7)=-1; U(3,8)=-1;
 [c_bars,t_strings,V]=tensegrity_statics(b,s,q,p,dim,Q,P,C,U);
-tensegrity_plot(Q,P,C,b,s,U,V,true,2.0); grid on;
+tensegrity_plot(Q,P,C,b,s,U,V,true,1.0); grid on;
 
