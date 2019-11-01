@@ -38,7 +38,13 @@ C(b+9,1)=1; C(b+9,5)=-1;
 C(b+10,2)=1; C(b+10,6)=-1;
 C(b+11,3)=1; C(b+11,7)=-1;
 C(b+12,4)=1; C(b+12,8)=-1;
-s=12;
+%above are strings for a minimal prism
+%below are strings connected the diagnol which makes a non-minimal prism
+C(b+13,1)=1; C(b+13,8)=-1;
+C(b+14,2)=1; C(b+14,5)=-1;
+C(b+15,3)=1; C(b+15,6)=-1;
+C(b+16,4)=1; C(b+16,7)=-1;
+s=16;
 m=b+s;
 U(1:dim,1:8)=0; 
 U(3,1)=1; U(3,2)=1; U(3,3)=1; U(3,4)=1;
