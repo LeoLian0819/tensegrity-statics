@@ -3,14 +3,8 @@
 %at UC San Diego
 
 %This function requires input of 
-%1. How many bars used to construct the prism? 
-%2. What's the radii of the top/bottom polygon? (Assuming they have the
-%same radii. The construction of prism with different radii in the
-%future maybe added.
-%3. Twist angle.
-%The output constructs, analyzes and plots the tensegrity prism constructed
-%from user input.
-
+%1. ow many bars used to construct the prism? 
+%2.
 function f_non_min_prism(k,rad,alpha)
 %check if alphi is within range
 if alpha>pi/2 || alpha<pi/2-pi/k
