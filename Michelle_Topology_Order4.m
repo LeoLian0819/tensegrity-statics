@@ -1,4 +1,4 @@
-%Static force analysis for a Michelle Topology (Fig 4.3)
+%Static force analysis for a Michelle Topology of Order 4(Fig 4.3)
 %By Yuhao Lian, UC San Diego
 clear; figure(1);
 

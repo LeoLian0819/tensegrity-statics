@@ -31,25 +31,27 @@ end
 C(k,k)=1; C(k,k+1)=-1;
 %strings
 %strings constructing top and bottom polygons
-for i=k+1:2*k-1
-    C(i,i-k)=1; C(i,i-k+1)=-1;
+for i=1:k-1
+    C(k+i,i)=1; C(k+i,i+1)=-1;
 end
 C(2*k,1)=1; C(2*k,k)=-1;
-for i=2*k+1:3*k-1
-    C(i,i-k+1)=-1; C(i,i-k)=1;
+for i=1:k-1
+    C(2*k+i,i+k)=1; C(2*k+i,i+k+1)=-1;
 end
 C(3*k,k+1)=1; C(3*k,2*k)=-1;
-for i=3*k+1:4*k-1
-    C(i,i-2*k-3)=1;C(i,i-2*k)=-1;
+for i=1:k
+    C(3*k+i,i)=1; C(3*k+i,i+k)=-1;
 end
-C(4*k,1)=1; C(4*k,2*k)=-1;
-for i=4*k+1:5*k
-    C(i,i-3*k)=-1;C(i,i-4*k)=1;
+C(4*k+1,1)=1; C(4*k+1,2*k)=-1;
+%above 3k strings are minimal strings
+%below are diagonal strings
+for i=2:k-1
+    C(4*k+i,i)=1; C(4*k+i,i+k-1)=-1;
 end
-
+C(5*k,k)=1; C(5*k,2*k-1)=-1;
 U(1:dim,1:n)=0;
-U(dim,1:k)=1;
-U(dim,k+1:2*k)=-1;
+% U(dim,1:k)=1;
+% U(dim,k+1:2*k)=-1;
 size(C)
 C,Q
 [c_bars,t_strings,V]=tensegrity_statics(b,s,q,p,dim,Q,P,C,U);
