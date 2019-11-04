@@ -59,8 +59,8 @@ for i=2:k-1
 end
 C(5*k,k)=1; C(5*k,2*k-1)=-1;
 U(1:dim,1:n)=0;
-% U(dim,1:k)=1;
-% U(dim,k+1:2*k)=-1;
+%U(dim,1:k)=1;
+%U(dim,k+1:2*k)=-1;
 [c_bars,t_strings,V]=tensegrity_statics(b,s,q,p,dim,Q,P,C,U);
 tensegrity_plot(Q,P,C,b,s,U,V,true,1.0); grid on;
 
