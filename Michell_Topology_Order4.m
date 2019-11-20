@@ -1,8 +1,8 @@
-%Static force analysis for a Michelle Topology of Order 4(Fig 4.3)
+%Static force analysis for a Michell Topology of Order 4(Fig 4.3)
 %By Yuhao Lian, UC San Diego
 clear; figure(1);
 
-%For Michelle Topology, we have to specify r0, p0, phi and beta, where phi+2beta<pi
+%For Michell Topology, we have to specify r0, p0, phi and beta, where phi+2beta<pi
 phi=pi/8;
 beta=pi/6;
 a=sin(beta)/sin(beta+phi);
@@ -65,6 +65,6 @@ C(19,7)=1; C(19,4)=-1;
 C(20,4)=1; C(20,15)=-1;
 s=10;
 m=b+s;
-U(1:dim,1:10)=0; U(2,10)=-1;
+U(1:dim,1:10)=0; U(2,10)=1;
 [c_bars,t_strings,V]=tensegrity_statics(b,s,q,p,dim,Q,P,C,U);
 tensegrity_plot(Q,P,C,b,s,U,V,true,1.0); grid on;
